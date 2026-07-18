@@ -228,50 +228,43 @@ documents**, for two distinct, diagnosable reasons — both since fixed in
    gap `TrainedRouter` (documented in `src/router.py`) is meant to close
    with labeled training data instead of hand-written heuristics.
 
-## What to say about this project in an interview
+## Key findings & design decisions
 
-- "I built a hybrid retrieval pipeline (BM25 + dense, fused with reciprocal
-  rank fusion) because dense-only retrieval misses exact terminology and
-  BM25-only misses paraphrases — and when I scaled my corpus to 16
-  documents across 8 domains, I got a real, measurable case for this: TF-IDF
-  dense-only dropped to 95.24% hit rate@5 because its SVD compression lost
-  a specific term match that raw BM25 (and the hybrid fusion) still caught.
-  When I swapped in real bge-small-en-v1.5 embeddings, that gap closed to
-  100% on its own — so hybrid fusion was compensating for a weak embedder's
-  compression loss, not for some ceiling on dense retrieval itself."
-- "I found that my out-of-scope router could be fooled by incidental
-  vocabulary overlap — a generic 'what's the weather' question matched a
-  facilities policy document that happened to mention 'severe weather
-  advisory' via a rare word dominating an SVD-compressed component, even
-  though the two have nothing to do with each other. I fixed it by removing
-  each query word one at a time and checking whether the match survives —
-  a genuine topical match never collapses more than ~40% when you remove
-  one word, but the weather match collapsed 100%, since the whole thing
-  hinged on that one word. I re-verified on real embeddings and found this
-  specific failure mode was actually an artifact of the TF-IDF fallback's
-  compression, not of similarity-based gating in general — a good example
-  of a fix that turned out to be more narrowly scoped than I first assumed."
-- "I added a query router so out-of-scope questions get refused before
-  wasting a retrieval+generation call, and multi-hop questions get
-  decomposed into sub-questions instead of being under-served by a single
-  retrieval pass. Scaling my corpus to 16 documents dropped routing
-  accuracy from 91.67% to 72%, and I traced it to two separate bugs — a
-  word-boundary matching defect and an overly narrow signal list — fixed
-  both, and got back to 96%, verified identically on both a lexical
-  (TF-IDF) and pretrained semantic (bge-small) embedding backend. The one
-  remaining miss is two eval questions that are lexically identical in
-  structure but have different gold labels — no rule-based heuristic can
-  separate them, which is exactly the case for the fine-tuned classifier
-  (`TrainedRouter`, documented as the next upgrade) I'd build next."
-- "Every generated answer carries inline citations back to source chunks,
-  and I run a post-generation hallucination check that flags unsupported
-  claims — currently at 79% faithfulness with the template generator as a
-  deliberately conservative baseline, identical across both embedding
-  backends since generation logic doesn't depend on the embedder."
-- "I identified that my initial retrieval ablation was saturated because my
-  corpus was too small to be a meaningful test, which is itself a real
-  finding about eval design, and I documented exactly how I'd scale the
-  corpus to make the test discriminating."
+- **Hybrid retrieval compensated for a weak embedder, not for a ceiling on
+  dense retrieval.** TF-IDF+SVD dense-only dropped to 95.24% hit_rate@5 on
+  the 16-doc corpus because SVD compression lost a specific term match
+  ("database," "bypass") that raw BM25 (and hybrid fusion) still caught.
+  Swapping in real bge-small-en-v1.5 embeddings closed that gap to 100% on
+  its own — a more precise conclusion than "hybrid beats dense": fusion was
+  masking an embedder-quality problem, not compensating for a structural
+  limit of dense retrieval.
+- **A naive out-of-scope gate can be fooled by incidental vocabulary
+  overlap.** With TF-IDF, "what's the weather like today?" scored 0.954
+  similarity because `facilities_office_policy.txt` mentions "severe
+  weather advisory" in an unrelated context — a rare word dominating one
+  SVD-compressed component inflated the match. Fixed by removing each query
+  word one at a time and checking whether the match survives: a genuine
+  topical match never collapses more than ~40% when a single word is
+  removed, while the weather match collapsed 100%, since the whole score
+  hinged on that one word. Re-verified on real embeddings and found the
+  failure mode doesn't reproduce there — it's an artifact of TF-IDF's
+  SVD compression, not of similarity-based gating in general.
+- **The rule-based query router improved from 72% → 96% routing accuracy**
+  (verified identically on TF-IDF and bge-small-en-v1.5) after fixing a
+  word-boundary matching bug and an overly narrow multi-hop signal list.
+  One miss remains: two eval questions share an identical surface structure
+  but different gold labels, which no lexical rule can separate without
+  breaking the other — exactly the gap `TrainedRouter` (a fine-tuned
+  classifier, stubbed in `src/router.py`) is meant to close with labeled
+  training data instead of hand-written heuristics.
+- **Faithfulness holds at 79%** across both embedding backends, as expected
+  — the template generator and lexical entailment checker don't depend on
+  the embedder.
+- **The original 5-document corpus saturated every retrieval method at
+  100%**, which was itself a finding about eval design rather than a win —
+  it meant the test wasn't discriminating. Scaling to 16 documents across 8
+  domains with deliberate cross-domain vocabulary overlap is what surfaced
+  the findings above.
 
 ## Project structure
 
