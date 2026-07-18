@@ -1,0 +1,32 @@
+SECURITY INCIDENT RESPONSE — ENGINEERING HANDBOOK, SECTION 6
+
+6.1 Severity Levels
+Severity-1 (Sev-1): Active data breach, customer data exposed, or complete service
+outage affecting all customers. Sev-1 requires immediate paging of the on-call
+Security Lead and the VP of Engineering, regardless of time of day.
+
+Severity-2 (Sev-2): Partial outage or a vulnerability with confirmed exploitation
+attempts but no confirmed data loss. Sev-2 requires Security Lead notification
+within 30 minutes.
+
+Severity-3 (Sev-3): A discovered vulnerability with no evidence of exploitation.
+Sev-3 issues are triaged during the next business day's security standup.
+
+6.2 Error-Rate and Latency Thresholds
+For canary evaluation, a release fails automatically if the p99 latency increases
+by more than 15% over baseline, or if the error rate exceeds 1.5% during the
+canary window. These thresholds are stricter than the 2% general rollback
+threshold described in the Deployment Policy because canary traffic is a smaller,
+more sensitive sample.
+
+6.3 Post-Incident Reviews
+Every Sev-1 and Sev-2 incident requires a written postmortem within 5 business
+days. Postmortems must be blameless, must include a timeline reconstructed from
+logs (not memory), and must be reviewed by the Security Lead before being shared
+company-wide.
+
+6.4 Data Breach Notification
+If customer data is confirmed exposed, Legal and the Data Protection Officer must
+be notified within 1 hour of confirmation, per compliance obligations. The
+customer-facing notification timeline depends on jurisdiction and is determined
+by Legal, not Engineering.

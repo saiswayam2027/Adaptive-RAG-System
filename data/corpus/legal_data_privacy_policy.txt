@@ -1,0 +1,33 @@
+DATA PRIVACY AND RETENTION POLICY — LEGAL HANDBOOK, SECTION 5
+
+5.1 Data Classification
+Data is classified into three tiers: Public, Internal, and Restricted.
+Restricted data includes customer PII, payment information, and health
+records. Only Restricted-data-cleared employees (a designation separate
+from general production access) may query tables containing this tier.
+
+5.2 Retention Periods
+Customer account data is retained for 7 years after account closure to
+satisfy statutory recordkeeping requirements. Support ticket data is
+retained for 2 years. Marketing engagement data (email opens, clicks) is
+retained for 18 months, after which it is automatically purged unless the
+customer has an active subscription.
+
+5.3 Data Subject Access Requests (DSAR)
+A verified data subject access request must be fulfilled within 30
+calendar days under most applicable regulations, though some jurisdictions
+require 45 days. Legal, not Engineering or Support, determines which
+jurisdiction's timeline applies based on the customer's registered country.
+
+5.4 Third-Party Data Sharing
+No customer Restricted-tier data may be shared with a third-party vendor
+without a signed Data Processing Agreement (DPA) reviewed by Legal. Marketing
+and Analytics teams must use anonymized or aggregated data for any
+third-party analytics tooling.
+
+5.5 Breach Notification Coordination
+This section cross-references the Security Incident Response process:
+Legal owns the external, customer-facing and regulator-facing notification
+timeline for any confirmed data exposure, while Security owns the internal
+technical response and containment. The two timelines run in parallel, not
+sequentially, once Security confirms exposure to Legal.

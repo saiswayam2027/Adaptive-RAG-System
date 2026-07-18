@@ -1,0 +1,25 @@
+LEAVE AND REMOTE WORK POLICY — HR HANDBOOK, SECTION 2
+
+2.1 Annual Leave
+Full-time employees accrue 1.5 days of annual leave per completed month, capped
+at 18 days per calendar year. Unused leave up to 5 days may be carried over to
+the next calendar year; anything beyond that is forfeited unless local labor law
+requires otherwise.
+
+2.2 Sick Leave
+Employees are entitled to 10 paid sick days per year, no medical certificate
+required for absences of 2 days or fewer. Absences of 3 or more consecutive days
+require a medical certificate submitted within 5 working days of return.
+
+2.3 Remote Work
+Employees may work remotely up to 2 days per week without prior approval.
+Fully remote arrangements (more than 2 days per week) require manager approval
+and must be renewed every 6 months. Engineers on the on-call rotation must be
+reachable and have stable internet during their on-call shift regardless of
+remote work arrangement.
+
+2.4 Notice Periods
+The standard notice period for resignation is 30 days for individual contributors
+and 60 days for engineering managers and above. Notice periods may be reduced by
+mutual agreement but require written sign-off from both the employee's manager
+and HR.

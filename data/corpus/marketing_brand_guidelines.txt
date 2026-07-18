@@ -1,0 +1,31 @@
+MARKETING AND BRAND GUIDELINES — MARKETING HANDBOOK, SECTION 2
+
+2.1 Approval for External Content
+Any blog post, press release, or paid ad campaign above $10,000 in spend
+requires Marketing Director approval. Content mentioning specific customer
+names or logos requires separate written approval from that customer's
+account team, tracked in the customer reference registry.
+
+2.2 Brand Voice and Messaging
+Public-facing messaging must avoid making specific uptime or security
+guarantees (e.g. "100% secure") without Legal review, since such claims can
+create contractual exposure beyond what the actual SLA commits to in the
+Customer Support SLA Policy.
+
+2.3 Social Media Response Escalation
+Customer complaints on public social media are triaged by the social team
+within 1 hour during business hours. Complaints alleging a data breach or
+security issue are escalated immediately to Security and Legal
+simultaneously, bypassing the normal social-team response queue entirely.
+
+2.4 Co-Marketing Agreements
+Joint marketing campaigns with partners require a co-marketing agreement
+reviewed by Legal, separate from the vendor Data Processing Agreement
+process, since co-marketing partners are not necessarily handling customer
+data.
+
+2.5 Embargo and Announcement Timing
+Product announcements under embargo must not be shared internally beyond
+the named launch team until 24 hours before public release, to reduce leak
+risk; this internal embargo window is unrelated to the customer-facing
+notification timelines Legal manages for data incidents.

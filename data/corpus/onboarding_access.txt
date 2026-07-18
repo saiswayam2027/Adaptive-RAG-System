@@ -1,0 +1,29 @@
+NEW ENGINEER ONBOARDING — ENGINEERING HANDBOOK, SECTION 1
+
+1.1 Access Provisioning
+New engineers receive read-only access to all internal repositories on day one.
+Write access to a specific service's repository is granted only after the
+engineer's manager approves it in the access request portal, which typically
+takes 1-2 business days.
+
+Access to the payments service repository additionally requires completing the
+PCI compliance training module, which is assigned automatically on day one and
+must be completed within the first two weeks.
+
+1.2 Production Access
+Direct production database access is not granted to engineers in their first 90
+days. During this period, any production data investigation must be done through
+a senior engineer or via the read-only analytics replica.
+
+1.3 On-Call Rotation
+Engineers join the on-call rotation only after completing 90 days of employment
+and shadowing at least two on-call shifts with a senior engineer. The on-call
+rotation covers Sev-1 and Sev-2 incidents as defined in the Security Incident
+Response section.
+
+1.4 Required Training
+All new engineers must complete: (1) the security awareness training, (2) the
+incident response tabletop exercise, and (3) the deployment policy walkthrough,
+all within the first 30 days. Engineers working on the payments or authentication
+services have two additional required modules covering PCI-DSS and OAuth token
+handling respectively.

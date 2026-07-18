@@ -1,0 +1,30 @@
+DEPLOYMENT POLICY — ENGINEERING HANDBOOK, SECTION 4
+
+4.1 Deployment Windows
+All production deployments must occur between 10:00 and 16:00 IST on weekdays.
+Deployments outside this window require sign-off from the on-call Engineering Manager
+and must be logged in the #deploy-exceptions channel within 15 minutes of the deploy.
+
+4.2 Approval Requirements
+Any change touching the payments service requires two approvals: one from a senior
+engineer on the Payments team and one from the Security team. Changes to the
+authentication service require approval from the Security team lead specifically,
+not just any Security team member.
+
+4.3 Rollback Procedure
+If a deployment causes error rates to exceed 2% for more than 5 minutes, the
+deploying engineer must trigger an automatic rollback using the `deploy rollback`
+CLI command. Manual rollbacks (via direct database edits) are prohibited except
+during a declared Severity-1 incident, and even then require a second engineer to
+review the rollback plan before execution.
+
+4.4 Canary Releases
+All changes to services with more than 10,000 requests per minute must go through
+a canary release: 1% traffic for 10 minutes, then 10% for 20 minutes, then 100%.
+Canary metrics are automatically evaluated against the error-rate and latency
+thresholds defined in Section 6.2 before promotion to the next stage.
+
+4.5 Freeze Periods
+There is a deployment freeze during the last week of each fiscal quarter (the last
+7 calendar days of March, June, September, and December) except for Severity-1
+security patches, which may be deployed at any time with Security team approval.

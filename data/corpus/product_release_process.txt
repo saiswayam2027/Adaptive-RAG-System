@@ -1,0 +1,34 @@
+PRODUCT RELEASE AND LAUNCH PROCESS — PRODUCT HANDBOOK, SECTION 1
+
+1.1 Launch Readiness Review
+Any customer-facing feature launch requires a Launch Readiness Review at
+least 5 business days before the target date, covering support
+documentation, a rollback plan, and confirmation that the change has
+already passed through Engineering's canary release process described in
+the Deployment Policy.
+
+1.2 Beta and Gradual Rollout
+Features enter a private beta with a named customer list before general
+availability. Beta feedback issues rated as blocking must be resolved
+before proceeding to the percentage-based gradual rollout, which follows
+the same 1% / 10% / 100% staging pattern as Engineering's canary releases
+but is tracked separately in the product analytics dashboard, not the
+deployment system.
+
+1.3 Launch Communication Ownership
+Marketing owns external announcement content and timing (see Marketing
+embargo rules), Product owns the changelog and in-app release notes, and
+Support owns internal enablement material for the support team. All three
+must be finalized before the Launch Readiness Review can pass.
+
+1.4 Post-Launch Monitoring
+For the first 72 hours after general availability, the feature owner must
+monitor adoption and error metrics daily and is on point to pull the
+feature via feature flag if usage-pattern issues emerge, independent of the
+Sev-1/Sev-2 incident process, which only triggers for the broader classes
+of outage or breach described in Security's Incident Response policy.
+
+1.5 Launch Postponement
+A Launch Readiness Review can be postponed by any of Engineering, Support,
+or Legal raising an unresolved blocking concern; Marketing alone cannot
+block a launch but can request a postponement through the Product lead.

@@ -1,0 +1,33 @@
+SALES DISCOUNTING AND CONTRACT POLICY — SALES HANDBOOK, SECTION 4
+
+4.1 Standard Discount Authority
+Account Executives may offer discounts up to 15% off list price without
+approval. Discounts between 15% and 30% require Sales Manager approval.
+Discounts above 30% require VP of Sales approval and must include a
+competitive justification in the deal desk system.
+
+4.2 Multi-Year Contract Discounts
+A 2-year prepaid contract may receive an additional 5% discount stacked on
+top of the standard discount tier; a 3-year prepaid contract may receive an
+additional 10%. These multi-year discounts cannot be combined with
+end-of-quarter promotional discounts described in Section 4.4.
+
+4.3 Contract Redlines
+Any customer-requested change to standard contract language (redlines)
+must be reviewed by Legal before the Account Executive can countersign.
+Redlines touching data processing or liability clauses specifically require
+review from both Legal and Security, mirroring the dual-approval pattern
+used for payments-service changes in Engineering.
+
+4.4 End-of-Quarter Promotions
+During the last 5 business days of a fiscal quarter, an additional
+promotional discount of up to 5% may be applied without additional approval
+beyond the Section 4.1 thresholds, but this promotional window explicitly
+does not override the deployment freeze period observed by Engineering
+during the same days.
+
+4.5 Churn and Downgrade Handling
+A customer requesting to downgrade or cancel must be routed to the
+Customer Success team, not the original Account Executive, within 1
+business day of the request, to ensure retention conversations are handled
+by a team without a commission incentive tied to the outcome.

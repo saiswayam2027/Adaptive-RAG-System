@@ -1,0 +1,11 @@
+numpy
+scikit-learn
+rank_bm25
+streamlit
+
+# --- Optional upgrades (require network/GPU access, e.g. on Colab) ---
+# sentence-transformers   # for TransformerEmbedder / FineTunedCrossEncoder / NliHallucinationChecker
+# transformers            # for TrainedRouter (fine-tuned DistilBERT)
+# torch                   # backend for the above
+# ragas                   # for standardized faithfulness/answer-relevancy/context-precision metrics
+# openai / groq            # for LLMGenerator (swap in whichever API you use)

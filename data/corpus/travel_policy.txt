@@ -1,0 +1,34 @@
+BUSINESS TRAVEL POLICY — FINANCE HANDBOOK, SECTION 7
+
+7.1 Booking Requirements
+All business travel must be booked through the corporate travel portal to
+be reimbursable, except in regions where the portal has no coverage, in
+which case direct booking is allowed with pre-trip approval from the
+manager. This is a separate approval from the airfare-advance-booking rule
+in the Expense Policy's Section 3.2, which governs timing, not the booking
+channel.
+
+7.2 International Travel Safety
+Travel to a country on the elevated-risk list requires Security team
+sign-off at least 5 business days before departure, and travelers must
+enroll in the company's travel tracking app for the duration of the trip.
+This is unrelated to the Security team approvals required for payments or
+authentication service changes in Engineering.
+
+7.3 Per Diem Rates
+Meal per diems vary by destination city cost-of-living tier: Tier 1 cities
+(highest cost) receive $85/day, Tier 2 receive $65/day, Tier 3 receive
+$45/day. Per diems are not reduced for partial travel days except the
+first and last day of a trip, which are paid at 75%.
+
+7.4 Combining Business and Personal Travel
+Employees may extend a business trip for personal reasons at their own
+expense; the company covers only the cost of the business-required
+portion, calculated by comparing the actual airfare to what a
+business-only itinerary would have cost, documented by the travel desk.
+
+7.5 Travel Expense Submission Deadline
+Travel expenses must be submitted within 30 days of trip completion, a
+shorter window than the general 60-day expense submission deadline in
+Section 3.3 of the Expense Policy, because travel expenses are higher-volume
+and harder to reconstruct accurately if delayed.

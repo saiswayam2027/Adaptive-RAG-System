@@ -1,0 +1,184 @@
+[
+  {
+    "id": "q1",
+    "question": "What error rate triggers an automatic rollback?",
+    "type": "simple",
+    "gold_doc": "deployment_policy.txt",
+    "gold_answer": "An automatic rollback is triggered if error rates exceed 2% for more than 5 minutes."
+  },
+  {
+    "id": "q2",
+    "question": "How many approvals does a change to the payments service need, and from whom?",
+    "type": "simple",
+    "gold_doc": "deployment_policy.txt",
+    "gold_answer": "Two approvals: one from a senior engineer on the Payments team and one from the Security team."
+  },
+  {
+    "id": "q3",
+    "question": "If a canary release for a high-traffic service breaches the error-rate threshold, what threshold applies, and why is it different from the general rollback threshold?",
+    "type": "multi_hop",
+    "gold_doc": ["deployment_policy.txt", "security_incident_response.txt"],
+    "gold_answer": "Canary releases fail if error rate exceeds 1.5% or p99 latency increases more than 15%, which is stricter than the 2% general rollback threshold because canary traffic is a smaller, more sensitive sample."
+  },
+  {
+    "id": "q4",
+    "question": "A new engineer wants production database access to debug an issue in their first month. What should they do instead?",
+    "type": "multi_hop",
+    "gold_doc": ["onboarding_access.txt"],
+    "gold_answer": "They cannot get direct production access in their first 90 days; they must work through a senior engineer or use the read-only analytics replica."
+  },
+  {
+    "id": "q5",
+    "question": "Who must be notified within one hour if customer data is confirmed exposed, and who decides the customer notification timeline?",
+    "type": "multi_hop",
+    "gold_doc": ["security_incident_response.txt"],
+    "gold_answer": "Legal and the Data Protection Officer must be notified within 1 hour; Legal (not Engineering) decides the customer-facing notification timeline based on jurisdiction."
+  },
+  {
+    "id": "q6",
+    "question": "How many days of annual leave can be carried over to the next year?",
+    "type": "simple",
+    "gold_doc": "leave_remote_policy.txt",
+    "gold_answer": "Up to 5 unused days may be carried over to the next calendar year."
+  },
+  {
+    "id": "q7",
+    "question": "Can an engineer join the on-call rotation in their first week?",
+    "type": "simple",
+    "gold_doc": "onboarding_access.txt",
+    "gold_answer": "No, engineers join on-call only after 90 days of employment and shadowing at least two on-call shifts."
+  },
+  {
+    "id": "q8",
+    "question": "What is the capital of France?",
+    "type": "out_of_scope",
+    "gold_doc": null,
+    "gold_answer": "This question is out of scope for this corpus; the system should refuse or say it cannot find this in the documents."
+  },
+  {
+    "id": "q9",
+    "question": "Can the company deploy a security patch during the fiscal quarter freeze week?",
+    "type": "simple",
+    "gold_doc": "deployment_policy.txt",
+    "gold_answer": "Yes, Severity-1 security patches may be deployed at any time with Security team approval, even during the freeze period."
+  },
+  {
+    "id": "q10",
+    "question": "What's the weather like today?",
+    "type": "out_of_scope",
+    "gold_doc": null,
+    "gold_answer": "This question is out of scope for this corpus; the system should refuse or say it cannot find this in the documents."
+  },
+  {
+    "id": "q11",
+    "question": "How soon do employees have to hand in a doctor's note after being out sick for several days in a row?",
+    "type": "simple",
+    "gold_doc": "leave_remote_policy.txt",
+    "gold_answer": "A medical certificate must be submitted within 5 working days of return for absences of 3 or more consecutive days.",
+    "note": "Paraphrase test: doctor's note vs medical certificate, several days in a row vs consecutive days -- little shared vocabulary with the source sentence, so BM25 alone should struggle here while dense/hybrid should not."
+  },
+  {
+    "id": "q12",
+    "question": "Is it okay for a junior developer to bypass normal procedure and edit the database directly to undo a bad release?",
+    "type": "simple",
+    "gold_doc": "deployment_policy.txt",
+    "gold_answer": "Manual rollbacks via direct database edits are prohibited except during a declared Severity-1 incident, and even then require a second engineer to review the plan.",
+    "note": "Paraphrase test: bypass normal procedure and edit the database directly vs Manual rollbacks (via direct database edits) are prohibited -- tests whether retrieval catches restated intent, not just matching words."
+  },
+  {
+    "id": "q13",
+    "question": "What approval is needed for a $1,500 expense?",
+    "type": "simple",
+    "gold_doc": "finance_expense_policy.txt",
+    "gold_answer": "Manager approval plus Finance Business Partner approval, since it falls in the $200-$2,000 tier.",
+    "note": "Hard negative trap: vendor_procurement_policy.txt also has dollar-amount approval tiers ($1,000/$10,000), for a different process (vendor POs, not employee expenses). Tests whether retrieval distinguishes the two similarly-shaped policies."
+  },
+  {
+    "id": "q14",
+    "question": "What's the password rotation period for accounts with restricted data access?",
+    "type": "simple",
+    "gold_doc": "it_infrastructure_access.txt",
+    "gold_answer": "Every 90 days for accounts with Restricted-tier data access, versus 180 days for standard accounts.",
+    "note": "Hard negative trap: '90 days' also appears in onboarding_access.txt (production access eligibility) and performance_review_policy.txt (review cycle exclusion) for unrelated reasons. Tests numeric-match precision, not just number matching."
+  },
+  {
+    "id": "q15",
+    "question": "If a customer asks a support agent to delete their account data, what should the agent do?",
+    "type": "multi_hop",
+    "gold_doc": ["customer_support_sla.txt", "legal_data_privacy_policy.txt"],
+    "gold_answer": "Route it to the formal Data Subject Access Request process instead of manually deleting records, since manual deletion doesn't satisfy Legal's audit trail requirements."
+  },
+  {
+    "id": "q16",
+    "question": "Can a customer complaint about a data breach on social media skip the normal support triage queue?",
+    "type": "simple",
+    "gold_doc": "marketing_brand_guidelines.txt",
+    "gold_answer": "Yes, complaints alleging a data breach or security issue are escalated immediately to Security and Legal, bypassing the normal social-team response queue."
+  },
+  {
+    "id": "q17",
+    "question": "Can a rep knock 20% off the sticker price on their own say-so?",
+    "type": "simple",
+    "gold_doc": "sales_discounting_policy.txt",
+    "gold_answer": "No, discounts above 15% require Sales Manager approval; 20% would need that approval.",
+    "note": "Paraphrase test: 'knock X% off sticker price' / 'on their own say-so' vs 'discount... off list price' / 'without approval' -- minimal shared vocabulary."
+  },
+  {
+    "id": "q18",
+    "question": "What happens if a vendor keeps missing its SLAs?",
+    "type": "simple",
+    "gold_doc": "vendor_procurement_policy.txt",
+    "gold_answer": "Missing SLAs twice in a review period triggers a formal remediation plan; three consecutive misses trigger contract review for non-renewal."
+  },
+  {
+    "id": "q19",
+    "question": "Does being on a performance improvement plan affect someone's vacation days?",
+    "type": "simple",
+    "gold_doc": "performance_review_policy.txt",
+    "gold_answer": "No, employees on a PIP remain eligible for their standard leave accrual and remote work arrangements.",
+    "note": "Paraphrase test: 'vacation days' vs 'leave accrual'."
+  },
+  {
+    "id": "q20",
+    "question": "Who has to sign off before a redlined contract touching data processing clauses can be countersigned?",
+    "type": "multi_hop",
+    "gold_doc": ["sales_discounting_policy.txt"],
+    "gold_answer": "Both Legal and Security must review redlines touching data processing or liability clauses before the Account Executive can countersign."
+  },
+  {
+    "id": "q21",
+    "question": "How many days after a business trip do I need to submit my expenses?",
+    "type": "simple",
+    "gold_doc": "travel_policy.txt",
+    "gold_answer": "Travel expenses must be submitted within 30 days of trip completion -- shorter than the general 60-day expense deadline.",
+    "note": "Hard negative trap: finance_expense_policy.txt has a general 60-day submission deadline for expenses generally; travel has its own stricter 30-day rule. Tests whether retrieval picks the more specific document."
+  },
+  {
+    "id": "q22",
+    "question": "If a product launch has a problem in the first few days after release, is that treated the same as a security incident?",
+    "type": "multi_hop",
+    "gold_doc": ["product_release_process.txt", "security_incident_response.txt"],
+    "gold_answer": "No -- the feature owner monitors and can pull the feature via feature flag independently of the Sev-1/Sev-2 incident process, which only triggers for outages or breaches."
+  },
+  {
+    "id": "q23",
+    "question": "Does a hotfix for an active Sev-1 incident still need a second code reviewer?",
+    "type": "multi_hop",
+    "gold_doc": ["code_review_qa_policy.txt", "security_incident_response.txt"],
+    "gold_answer": "No, a hotfix addressing an active Sev-1/Sev-2 incident may bypass the second reviewer requirement with a single senior engineer approval, but still needs a follow-up full review within 24 hours."
+  },
+  {
+    "id": "q24",
+    "question": "What's the best pizza topping?",
+    "type": "out_of_scope",
+    "gold_doc": null,
+    "gold_answer": "This question is out of scope for this corpus; the system should refuse or say it cannot find this in the documents."
+  },
+  {
+    "id": "q25",
+    "question": "Who won the last World Cup?",
+    "type": "out_of_scope",
+    "gold_doc": null,
+    "gold_answer": "This question is out of scope for this corpus; the system should refuse or say it cannot find this in the documents."
+  }
+]

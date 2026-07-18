@@ -1,0 +1,34 @@
+PERFORMANCE REVIEW AND PROMOTION POLICY — HR HANDBOOK, SECTION 3
+
+3.1 Review Cycle
+Formal performance reviews occur twice a year, in June and December.
+Employees who joined less than 90 days before a review cycle are excluded
+from that cycle and reviewed in the following one instead, mirroring the
+90-day threshold used for production access eligibility in Engineering
+onboarding but for an unrelated reason.
+
+3.2 Rating Scale and Calibration
+Ratings range from 1 (significantly below expectations) to 5 (role model
+performance). Ratings of 4 or 5 require calibration discussion across
+managers within the same department before being finalized, to reduce
+inconsistency in how "exceeds expectations" is applied.
+
+3.3 Promotion Timing
+Promotions are processed twice a year, aligned with the review cycle.
+Off-cycle promotions require VP approval and are limited to cases of
+significant scope change or retention risk, documented in a promotion
+justification memo similar in spirit to the sole-source justification memo
+used in Vendor Procurement, though the two processes are otherwise
+unrelated.
+
+3.4 Performance Improvement Plans (PIP)
+A PIP lasts 30, 60, or 90 days depending on severity, set by the manager
+with HR Business Partner sign-off. Employees on a PIP remain eligible for
+their standard leave accrual and remote work arrangements as described in
+the Leave and Remote Work Policy; a PIP does not itself restrict those
+benefits.
+
+3.5 Manager Feedback Requirement
+Managers must document at least one written feedback note per direct report
+per quarter outside the formal review cycle, stored in the HR system for
+continuity if the manager changes roles.

@@ -1,0 +1,31 @@
+FACILITIES AND OFFICE POLICY — FACILITIES HANDBOOK, SECTION 1
+
+1.1 Desk and Room Booking
+Hot desks are booked via the office app up to 2 weeks in advance. Meeting
+rooms with capacity over 8 people require booking at least 24 hours ahead
+during standard business hours; smaller rooms can be booked with no advance
+notice if shown available.
+
+1.2 Guest Access
+Visitors must be registered at least 2 hours before arrival and escorted at
+all times in Restricted-access areas, which include the server room and any
+floor housing the Payments or Security teams. Visitors are never granted
+network credentials, only guest wifi.
+
+1.3 Equipment Requests
+Standard equipment (monitor, keyboard, chair) requests are fulfilled within
+5 business days. Ergonomic assessments and specialized equipment requests
+require a form submitted with manager approval and are fulfilled within 15
+business days.
+
+1.4 Office Closure and Weather Policy
+The office closes if local authorities issue a severe weather advisory.
+Employees are notified via the emergency SMS system, which is separate from
+the on-call paging system used for Sev-1/Sev-2 incidents described in the
+Security Incident Response policy.
+
+1.5 Badge Access Revocation
+Physical badge access is revoked on the same schedule as system access
+during offboarding: within 4 hours for involuntary departures and by end of
+day for voluntary departures, coordinated between Facilities and IT so
+neither team acts without the other's confirmation.

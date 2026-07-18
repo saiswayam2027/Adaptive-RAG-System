@@ -1,0 +1,34 @@
+CODE REVIEW AND QA POLICY — ENGINEERING HANDBOOK, SECTION 8
+
+8.1 Required Reviewers
+All pull requests require at least one approval before merge. Changes to
+the payments or authentication services require two approvals, matching the
+dual-approval requirement in the Deployment Policy's Section 4.2, but this
+review approval happens at the code-review stage, before the deployment
+approval gate, not as a substitute for it.
+
+8.2 Automated Test Coverage
+New code must maintain or improve test coverage for the modified files; a
+coverage drop below the file's baseline blocks merge automatically. Payments
+and authentication code additionally require a passing security static
+analysis scan, separate from the PCI compliance training requirement
+covered in onboarding.
+
+8.3 QA Sign-off for Major Releases
+Any release bundling more than 10 merged pull requests since the last
+release requires a QA sign-off in addition to standard code review, using a
+regression test suite run against the staging environment before the
+release can enter the canary rollout described in the Deployment Policy.
+
+8.4 Hotfix Exception
+A hotfix addressing an active Sev-1 or Sev-2 incident (as defined in
+Security's Incident Response policy) may bypass the standard second
+reviewer requirement with a single senior engineer approval, but must still
+pass automated tests, and requires a follow-up full review within 24 hours
+of merge.
+
+8.5 Dependency Updates
+Third-party dependency version bumps are auto-merged if only patch-level
+version changes and all tests pass. Minor or major version bumps require
+manual review specifically for breaking-change risk, regardless of which
+service is affected.

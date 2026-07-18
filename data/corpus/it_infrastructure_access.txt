@@ -1,0 +1,32 @@
+IT INFRASTRUCTURE AND ACCESS MANAGEMENT — IT HANDBOOK, SECTION 1
+
+1.1 Device Provisioning
+New hires receive a company laptop pre-configured with endpoint security
+software within 3 business days of their start date confirmation, separate
+from the repository/production access process covered in the Engineering
+onboarding handbook.
+
+1.2 VPN and Network Access
+Remote access to internal tools requires VPN connection with hardware-token
+multi-factor authentication. VPN sessions time out after 12 hours of
+inactivity and require re-authentication; this is distinct from the SSO
+session timeout for web-based internal tools, which is 8 hours.
+
+1.3 Software Procurement
+Employees may self-serve install software from the approved catalog
+without IT approval. Software not on the catalog requires a request through
+the IT portal, reviewed within 5 business days, with Security review added
+for any tool requesting access to customer data or source code.
+
+1.4 Offboarding
+All system access must be revoked within 4 hours of an employee's last day
+for involuntary departures, and by end of the final business day for
+voluntary departures. Payments and authentication service access (as
+defined in the Engineering deployment policy) is revoked first, ahead of
+general repository access, due to the elevated risk profile.
+
+1.5 Password and Credential Policy
+Passwords must be rotated every 180 days for standard accounts and every 90
+days for accounts with Restricted-tier data access (see Legal's Data
+Privacy Policy for the tier definition). Shared credentials are prohibited
+except for designated service accounts, which are audited quarterly.

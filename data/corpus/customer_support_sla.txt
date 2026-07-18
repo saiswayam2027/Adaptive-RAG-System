@@ -1,0 +1,34 @@
+CUSTOMER SUPPORT SLA POLICY — SUPPORT HANDBOOK, SECTION 2
+
+2.1 Ticket Priority Levels
+Priority-1 (P1): Customer's production system is fully down. First response
+required within 15 minutes, 24/7. Priority-2 (P2): Major feature broken, no
+workaround. First response within 2 hours during business hours.
+Priority-3 (P3): Minor issue or question, first response within 1 business
+day.
+
+2.2 Escalation Path
+A support ticket that goes 50% past its first-response SLA is automatically
+escalated to the shift lead. If still unresolved at 100% past SLA, it
+escalates to the Support Manager, and for P1 tickets specifically, also
+pages the on-call Engineering team simultaneously rather than waiting for
+sequential escalation.
+
+2.3 Refund and Credit Authority
+Support agents may issue service credits up to $100 without approval.
+Credits between $100 and $1,000 require Team Lead approval. Anything above
+$1,000, or any full refund request, requires Support Manager approval and
+must be logged with a reason code for Finance's quarterly credit audit.
+
+2.4 Customer Data Requests in Support Context
+If a customer asks a support agent to delete their account data, the agent
+must route this to the formal Data Subject Access Request process (see
+Legal's Data Privacy Policy) rather than manually deleting records, since
+manual deletion does not satisfy the audit trail requirements Legal needs
+for regulatory compliance.
+
+2.5 Outage Communication
+During a P1 incident affecting multiple customers, Support posts to the
+public status page within 30 minutes of confirmation and updates it at
+least every 30 minutes until resolution, coordinating messaging with
+Engineering's incident commander to avoid contradicting technical details.
